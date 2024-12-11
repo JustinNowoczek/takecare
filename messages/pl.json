@@ -1,0 +1,20 @@
+{
+	"Header": {
+		"bug-report": "Zgłoś problem",
+		"book-visit": "Umów wizytę"
+	},
+	"Pages": [
+		{ "route": "/", "name": "Strona główna" },
+		{ "route": "/online-visit", "name": "Wizyty online" },
+		{ "route": "/home-visit", "name": "Wizyty domowe" },
+		{ "route": "/hospital-visit", "name": "Wizyty stacjonarne" },
+		{ "route": "/second-opinion", "name": "Druga opinia" },
+		{ "route": "/activity-journal", "name": "Dziennik aktywności" },
+		{ "route": "/specialists-calendar", "name": "Kalendarz specjalistów" },
+		{ "route": "/reports", "name": "Raporty" },
+		{ "route": "/settings", "name": "Ustawienia" },
+		{ "route": "/faq", "name": "FAQ" },
+		{ "route": "/log-out", "name": "Wyloguj się" }
+	]
+}
+
