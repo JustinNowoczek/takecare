@@ -6,7 +6,7 @@ export default function Home() {
 		<main className="flex flex-col justify-center items-center gap-10 size-full">
 			Home page
 			<Button>
-				<Link href={'/home-visit'}> Go to showcase page</Link>
+				<Link href={'/home-visit/book'}> Go to showcase page</Link>
 			</Button>
 		</main>
 	)

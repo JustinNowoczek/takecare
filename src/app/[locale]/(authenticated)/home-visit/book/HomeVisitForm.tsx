@@ -15,8 +15,9 @@ import {
 	FormLabel,
 	FormMessage,
 } from '@/components/ui/form'
+import { Path, useForm } from 'react-hook-form'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useMemo } from 'react'
 import {
 	Select,
 	SelectContent,
@@ -36,8 +37,6 @@ import FormText from './FormText'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { format } from 'date-fns'
-import { useForm } from 'react-hook-form'
-import { useLocale } from 'next-intl'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
@@ -98,7 +97,8 @@ export default function HomeVisitForm({
 		symptoms: z
 			.array(z.string())
 			.refine(
-				(symptoms) => symptoms.every((symptom) => options.symptomOptions.includes(symptom)),
+				(symptoms) =>
+					options.symptomOptions.every(({ optionName }) => symptoms.includes(optionName)),
 				genericMsgs.selectMismatch
 			),
 		idType: z.string().refine(...requireValidOption(options.idTypeOptions)),
@@ -164,7 +164,7 @@ export default function HomeVisitForm({
 		.object({
 			requestId: z.string().min(1, zodRequiredObj),
 			visitType: z.string().refine(...requireValidOption(options.visitTypeOptions)),
-			specialization: z.string().refine(...requireValidOption(options.specOptions)),
+			specialization: z.string().refine(...requireValidOption(options.specializationOptions)),
 			topic: z.string().refine(...requireValidOption(options.topicOptions)),
 			language: z.string().refine(...requireValidOption(options.languageOptions)),
 			additionalInfo: z.string().optional(),
@@ -194,7 +194,7 @@ export default function HomeVisitForm({
 		})
 
 	const blankPatient = {
-		ageGroup: options.ageGroupOptions[0],
+		ageGroup: options.ageGroupOptions[0].optionName,
 		firstName: '',
 		idType: '',
 		idVal: '',
@@ -212,7 +212,7 @@ export default function HomeVisitForm({
 		resolver: zodResolver(formSchema),
 		defaultValues: {
 			requestId: '',
-			visitType: options.visitTypeOptions[0],
+			visitType: options.visitTypeOptions[0].optionName,
 			specialization: '',
 			topic: '',
 			visitSchedule: {
@@ -288,7 +288,7 @@ export default function HomeVisitForm({
 
 	function getCombo(
 		params: {
-			fieldName: keyof z.infer<typeof formSchema>
+			fieldName: Path<z.infer<typeof formSchema>>
 			fieldLabel: string
 			optionList: { optionName: string; optionLabel: string }[]
 		},
@@ -361,25 +361,13 @@ export default function HomeVisitForm({
 						)}
 					/>
 
-					<FormField
-						control={control}
-						name="visitSchedule.provideTimeRange"
-						render={({ field }) => (
-							<FormItem className="flex items-center">
-								<FormControl>
-									<Checkbox
-										className="mt-2 mr-3"
-										checked={field.value}
-										onCheckedChange={field.onChange}
-									/>
-								</FormControl>
-								<FormLabel>Wybierz konkretny przedział godzinowy</FormLabel>
-								<FormMessage />
-							</FormItem>
-						)}
+					<FormCheckbox
+						{...{
+							control,
+							fieldLabel: 'Wybierz konkretny przedział godzinowy',
+							fieldName: 'visitSchedule.provideTimeRange',
+						}}
 					/>
-
-					<FormCheckbox {...{ control, fieldLabel }} />
 
 					<div>
 						<FormLabel>Godzina</FormLabel>
@@ -567,9 +555,9 @@ export default function HomeVisitForm({
 												<FormControl>
 													<Tabs value={field.value} onValueChange={field.onChange}>
 														<TabsList>
-															{ageGroupOptions.map((aG) => (
-																<TabsTrigger key={aG} value={aG}>
-																	{aG}
+															{options.ageGroupOptions.map(({ optionLabel, optionName }) => (
+																<TabsTrigger key={optionName} value={optionName}>
+																	{optionLabel}
 																</TabsTrigger>
 															))}
 														</TabsList>
@@ -609,8 +597,8 @@ export default function HomeVisitForm({
 									{getCombo(
 										{
 											fieldLabel: 'Symptomy',
-											fieldName: 'patients.' + [i] + '.symptoms',
-											optionList: options.countryOptions,
+											fieldName: `patients.${i}.symptoms` as `patients.${number}.symptoms`,
+											optionList: options.symptomOptions,
 										},
 										true
 									)}
@@ -623,9 +611,9 @@ export default function HomeVisitForm({
 												<FormControl>
 													<Tabs value={field.value} onValueChange={field.onChange}>
 														<TabsList>
-															{idTypeOptions.map((idt) => (
-																<TabsTrigger key={idt} value={idt}>
-																	{idt}
+															{options.idTypeOptions.map(({ optionLabel, optionName }) => (
+																<TabsTrigger key={optionName} value={optionName}>
+																	{optionLabel}
 																</TabsTrigger>
 															))}
 														</TabsList>
