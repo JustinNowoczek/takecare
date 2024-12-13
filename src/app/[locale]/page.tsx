@@ -1,4 +1,14 @@
+import { Button } from '@/components/ui/button'
+import { Link } from '@/i18n/routing'
+
 export default function Home() {
-	return <main className="w-full flex justify-center h-full items-center">Home page</main>
+	return (
+		<main className="flex flex-col justify-center items-center gap-10 size-full">
+			Home page
+			<Button>
+				<Link href={'/home-visit'}> Go to showcase page</Link>
+			</Button>
+		</main>
+	)
 }
 

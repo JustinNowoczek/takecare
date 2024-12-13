@@ -1,7 +1,6 @@
 'use client'
 
 import { Bug, CalendarPlus2, Globe } from 'lucide-react'
-import { Link, routing, usePathname, useRouter } from '@/i18n/routing'
 import {
 	Select,
 	SelectContent,
@@ -9,10 +8,10 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from '@/components/ui/select'
+import { routing, usePathname, useRouter } from '@/i18n/routing'
 import { useLocale, useTranslations } from 'next-intl'
 
 import { Button } from '@/components/ui/button'
-import { ChangeEvent } from 'react'
 import Logo from '@/components/Logo'
 import React from 'react'
 import { useParams } from 'next/navigation'

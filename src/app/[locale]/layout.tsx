@@ -1,16 +1,6 @@
 import './globals.css'
 
-import {
-	Breadcrumb,
-	BreadcrumbItem,
-	BreadcrumbLink,
-	BreadcrumbList,
-	BreadcrumbPage,
-	BreadcrumbSeparator,
-} from '@/components/ui/breadcrumb'
-
 import Header from './Header'
-import MainNav from './MainNav'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import localFont from 'next/font/local'
@@ -43,29 +33,7 @@ export default async function LocaleLayout({
 			<body className={`${interVar.variable} h-screen flex flex-col antialiased`}>
 				<NextIntlClientProvider messages={messages}>
 					<Header />
-					<div className="flex h-full justify-between gap-5 my-10 px-[100px]">
-						<MainNav />
-
-						<main>
-							{/* <Breadcrumb className="pb-2">
-								<BreadcrumbList>
-									<BreadcrumbItem>
-										<BreadcrumbLink href={'/home-visit'}>2</BreadcrumbLink>
-									</BreadcrumbItem>
-									<>
-										<BreadcrumbSeparator />
-										<BreadcrumbItem>
-											<BreadcrumbPage>1</BreadcrumbPage>
-										</BreadcrumbItem>
-									</>
-								</BreadcrumbList>
-							</Breadcrumb> */}
-							<h1 className="text-4xl text-tcprimaryDark pb-6">1</h1>
-
-							{children}
-						</main>
-						<div className="formNav ">1</div>
-					</div>
+					<div className="flex justify-between gap-5 my-10 px-[100px] h-full">{children}</div>
 				</NextIntlClientProvider>
 			</body>
 		</html>
