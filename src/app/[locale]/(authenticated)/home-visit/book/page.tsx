@@ -1,32 +1,36 @@
-import {
-	Accordion,
-	AccordionContent,
-	AccordionItem,
-	AccordionTrigger,
-} from '@/components/ui/accordion'
-
 import HomeVisitForm from './HomeVisitForm'
+import { getLocale } from 'next-intl/server'
 
-export default function HomeVisit() {
+const fetchOptions = async () => {
+	const locale = await getLocale()
+
+	const response = await fetch(
+		`${process.env.NEXT_PUBLIC_BASE_URL}/api/homeVisitFetchOptions?language=${locale}`
+	)
+
+	if (!response.ok) {
+		throw new Error('Failed to fetch options')
+	}
+
+	return response.json()
+}
+
+export default async function HomeVisitFormPage() {
+	let options
+
+	try {
+		options = (await fetchOptions()) as {
+			[key: string]: { optionName: string; optionLabel: string }[]
+		}
+	} catch (error) {
+		console.log(error)
+
+		return <main>Failed fetching form</main>
+	}
+
 	return (
-		<main className="flex gap-5">
-			<HomeVisitForm />
-			<div className="w-min formNav">
-				<Accordion type="multiple" defaultValue={['item-2']}>
-					<AccordionItem value="item-1">
-						<AccordionTrigger>Is it accessible?</AccordionTrigger>
-						<AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
-					</AccordionItem>
-					<AccordionItem value="item-2">
-						<AccordionTrigger>Is it accessible?</AccordionTrigger>
-						<AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
-					</AccordionItem>
-					<AccordionItem value="item-3">
-						<AccordionTrigger>Is it accessible?</AccordionTrigger>
-						<AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
-					</AccordionItem>
-				</Accordion>
-			</div>
+		<main>
+			<HomeVisitForm options={options} />
 		</main>
 	)
 }

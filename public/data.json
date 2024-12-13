@@ -1,0 +1,43 @@
+{
+	"visitTypeOptions": {
+		"homeVisit": { "en": "Home Visit", "pl": "Wizyta domowa" }
+	},
+	"specializationOptions": {
+		"generalMedicine": { "en": "General Medicine", "pl": "Medycyna ogólna" },
+		"cardiology": { "en": "Cardiology", "pl": "Kardiologia" },
+		"dermatology": { "en": "Dermatology", "pl": "Dermatologia" },
+		"pediatrics": { "en": "Pediatrics", "pl": "Pediatria" },
+		"neurology": { "en": "Neurology", "pl": "Neurologia" }
+	},
+	"topicOptions": {
+		"consultation": { "en": "Consultation", "pl": "Konsultacja" },
+		"followUp": { "en": "Follow Up", "pl": "Kontrola" },
+		"emergency": { "en": "Emergency", "pl": "Nagły przypadek" },
+		"checkup": { "en": "Checkup", "pl": "Przegląd" },
+		"diagnosis": { "en": "Diagnosis", "pl": "Diagnoza" }
+	},
+	"languageOptions": {
+		"english": { "en": "English", "pl": "Angielski" },
+		"polish": { "en": "Polish", "pl": "Polski" }
+	},
+	"symptomOptions": {
+		"fever": { "en": "Fever", "pl": "Gorączka" },
+		"cough": { "en": "Cough", "pl": "Kaszel" },
+		"headache": { "en": "Headache", "pl": "Ból głowy" },
+		"nausea": { "en": "Nausea", "pl": "Nudności" },
+		"fatigue": { "en": "Fatigue", "pl": "Zmęczenie" }
+	},
+	"countryOptions": {
+		"england": { "en": "England", "pl": "Anglia" },
+		"poland": { "en": "Poland", "pl": "Polska" }
+	},
+	"idTypeOptions": {
+		"passport": { "en": "Passport", "pl": "Paszport" },
+		"pesel": { "en": "PESEL", "pl": "PESEL" }
+	},
+	"ageGroupOptions": {
+		"child": { "en": "Child", "pl": "Dziecko" },
+		"adult": { "en": "Adult", "pl": "Dorosły" }
+	}
+}
+
