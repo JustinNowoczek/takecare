@@ -1,4 +1,83 @@
 {
-	"HomePage": { "test": "TestEn" }
+	"Header": {
+		"bug-report": "Report a problem",
+		"book-visit": "Schedule a visit"
+	},
+
+	"/": { "name": "Home Page" },
+	"/online-visit": { "name": "Online Visits" },
+	"/home-visit": { "name": "Home Visits", "/book": { "name": "Scheduling a Visit" } },
+	"/hospital-visit": { "name": "Hospital Visits" },
+	"/second-opinion": { "name": "Second Opinion" },
+	"/activity-journal": { "name": "Activity Journal" },
+	"/specialists-calendar": { "name": "Specialists' Calendar" },
+	"/reports": { "name": "Reports" },
+	"/settings": { "name": "Settings" },
+	"/faq": { "name": "FAQ" },
+	"/log-out": { "name": "Log Out" },
+
+	"form": {
+		"title": "Visit",
+		"fields": {
+			"requestId": {
+				"fieldLabel": "Request Number",
+				"fieldPlaceholder": "Enter request number"
+			},
+			"visitType": {
+				"fieldLabel": "Visit Type"
+			},
+			"specialization": {
+				"fieldLabel": "Specialization"
+			},
+			"visitSchedule": {
+				"visitDate": {
+					"fieldLabel": "Visit Date",
+					"fieldPlaceholder": "Select a date"
+				},
+				"provideTimeRange": { "fieldLabel": "Choose a specific time range" },
+				"visitFrom": { "selectPlaceholder": "From" },
+				"visitTo": { "selectPlaceholder": "To" }
+			},
+			"topic": { "fieldLabel": "Topic" },
+			"additionalInfo": {
+				"fieldLabel": "Additional Information",
+				"fieldPlaceholder": "Describe the problem"
+			},
+			"language": { "fieldLabel": "Language" },
+			"address": {
+				"country": {
+					"fieldLabel": "Address Details"
+				},
+				"street": {
+					"fieldLabel": "",
+					"fieldPlaceholder": "Street"
+				},
+				"houseNumber": {
+					"fieldLabel": "",
+					"fieldPlaceholder": "Apartment Number"
+				}
+			},
+			"visitAtSecondary": { "fieldLabel": "Visit to be held at a different address" }
+		},
+		"patientTitle": "Patient",
+		"patientFields": {
+			"ageGroup": { "fieldLabel": "Patient Age" },
+			"firstName": { "fieldLabel": "", "fieldPlaceholder": "First Name" },
+			"lastName": { "fieldLabel": "", "fieldPlaceholder": "Last Name" },
+			"symptoms": { "fieldLabel": "Symptoms" },
+			"idType": { "fieldLabel": "Document" },
+			"idVal": { "fieldLabel": "", "fieldPlaceholder": "Document Number" },
+			"birthDate": { "fieldLabel": "Date of birth", "fieldPlaceholder": "Select a date" }
+		},
+		"genericMessages": {
+			"selectPlaceholder": "Choose an option...",
+			"selectMismatch": "Option is not on the list.",
+			"searchPlaceholder": "Search for an option...",
+			"searchMismatch": "No option found for this search",
+			"timeMismatch": "This time is unavailable",
+			"requiredField": "Field is required",
+			"inputMismatch": "Invalid value"
+		}
+	}
 }
 

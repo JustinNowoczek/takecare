@@ -9,7 +9,6 @@ export default function layout({ children }: { children: React.ReactNode }) {
 			<main className="w-full">
 				<Header />
 				{children}
-				<div className="formNav">1</div>
 			</main>
 		</>
 	)

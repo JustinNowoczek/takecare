@@ -31,9 +31,5 @@ export default async function HomeVisitFormPage() {
 		return <main>Failed fetching form</main>
 	}
 
-	return (
-		<main>
-			<HomeVisitForm options={options} />
-		</main>
-	)
+	return <HomeVisitForm options={options} />
 }

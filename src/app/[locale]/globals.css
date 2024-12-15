@@ -26,6 +26,7 @@
 
 body {
 	background-color: var(--tcbackground);
+	scroll-behavior: smooth;
 
 	font-family: var(--font-inter), monospace;
 }

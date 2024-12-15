@@ -14,6 +14,70 @@
 	"/reports": { "name": "Raporty" },
 	"/settings": { "name": "Ustawienia" },
 	"/faq": { "name": "FAQ" },
-	"/log-out": { "name": "Wyloguj się" }
+	"/log-out": { "name": "Wyloguj się" },
+
+	"form": {
+		"title": "Wizyta",
+		"fields": {
+			"requestId": {
+				"fieldLabel": "Numer zgłoszenia",
+				"fieldPlaceholder": "Wpisz numer zgłoszenia"
+			},
+			"visitType": {
+				"fieldLabel": "Rodzaj wizyty"
+			},
+			"specialization": {
+				"fieldLabel": "Specjalizacja"
+			},
+			"visitSchedule": {
+				"visitDate": {
+					"fieldLabel": "Data wizyty",
+					"fieldPlaceholder": "Wybierz date"
+				},
+				"provideTimeRange": { "fieldLabel": "Wybierz konkretny przedział godzinowy" },
+				"visitFrom": { "selectPlaceholder": "Od" },
+				"visitTo": { "selectPlaceholder": "Do" }
+			},
+			"topic": { "fieldLabel": "Temat" },
+			"additionalInfo": {
+				"fieldLabel": "Dodatkowe informacje",
+				"fieldPlaceholder": "Opisz problem "
+			},
+			"language": { "fieldLabel": "Jezyk" },
+			"address": {
+				"country": {
+					"fieldLabel": "Dane adresowe"
+				},
+				"street": {
+					"fieldLabel": "",
+					"fieldPlaceholder": "Ulica"
+				},
+				"houseNumber": {
+					"fieldLabel": "",
+					"fieldPlaceholder": "Nr lokalu"
+				}
+			},
+			"visitAtSecondary": { "fieldLabel": "Wizyta ma się odbyć na inny adres" }
+		},
+		"patientTitle": "Pacjent",
+		"patientFields": {
+			"ageGroup": { "fieldLabel": "Wiek pacjenta" },
+			"firstName": { "fieldLabel": "", "fieldPlaceholder": "Imie" },
+			"lastName": { "fieldLabel": "", "fieldPlaceholder": "Nazwisko" },
+			"symptoms": { "fieldLabel": "Objawy" },
+			"idType": { "fieldLabel": "Dokument" },
+			"idVal": { "fieldLabel": "", "fieldPlaceholder": "Numer dokumentu" },
+			"birthDate": { "fieldLabel": "Data urodzin", "fieldPlaceholder": "Wybierz date" }
+		},
+		"genericMessages": {
+			"selectPlaceholder": "Wybierz opcje...",
+			"selectMismatch": "Opcja nie jest na liscie.",
+			"searchPlaceholder": "Wyszukaj opcje...",
+			"searchMismatch": "Brak opcji pod tym wyszukaniem",
+			"timeMismatch": "Ten czas nie jest dostepny",
+			"requiredField": "Pole jest wymagane",
+			"inputMismatch": "Niepoprawna wartosc"
+		}
+	}
 }
 

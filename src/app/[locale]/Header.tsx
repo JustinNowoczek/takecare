@@ -36,14 +36,14 @@ export default function Header() {
 	}
 
 	return (
-		<header className="flex justify-between header py-6 px-16 bg-tcbackground border-solid border-tcborder border-b-2">
+		<header className="flex justify-between bg-tcbackground px-16 py-6 border-tcborder border-b-2 border-solid header">
 			<Logo />
 			<nav className="flex items-center gap-6">
-				<Button variant={'outline'} className="px-6 h-fit text-tcerror py-3 border-tcerror">
+				<Button variant={'outline'} className="px-6 py-3 border-tcerror h-fit text-tcerror">
 					<Bug />
 					<span className="text-base">{t('bug-report')}</span>
 				</Button>
-				<Button className="px-6 h-fit py-3 bg-tcsecondary">
+				<Button className="bg-tcsecondary px-6 py-3 h-fit">
 					<CalendarPlus2 />
 					<span className="text-base">{t('book-visit')}</span>
 				</Button>

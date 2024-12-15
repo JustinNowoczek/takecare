@@ -6,12 +6,12 @@ import {
 	CommandInput,
 	CommandItem,
 	CommandList,
-} from '../../../../../components/ui/command'
+} from '../../../../../../components/ui/command'
 import { Control, FieldValues, Path, SetFieldValue } from 'react-hook-form'
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
-import { Popover, PopoverContent, PopoverTrigger } from '../../../../../components/ui/popover'
+import { Popover, PopoverContent, PopoverTrigger } from '../../../../../../components/ui/popover'
 
-import { Button } from '../../../../../components/ui/button'
+import { Button } from '../../../../../../components/ui/button'
 import React from 'react'
 
 type Props<T extends FieldValues> = {
@@ -42,7 +42,7 @@ export default function FormCombo<T extends FieldValues>({
 			control={control}
 			name={fieldName}
 			render={({ field }) => (
-				<FormItem className="flex flex-col">
+				<FormItem id={fieldName} className="flex flex-col">
 					<FormLabel>{fieldLabel}</FormLabel>
 					<Popover>
 						<PopoverTrigger asChild>
@@ -99,10 +99,12 @@ export default function FormCombo<T extends FieldValues>({
 													} else {
 														updatedValue[0] = optionName
 													}
-													setValue(fieldName, multiSelect ? updatedValue : updatedValue[0])
+													setValue(fieldName, multiSelect ? updatedValue : updatedValue[0], {
+														shouldValidate: true,
+													})
 												}}
 											>
-												<div className="flex items-center">
+												<div className="flex items-center gap-2">
 													<Check
 														className={
 															'ml-auto ' +

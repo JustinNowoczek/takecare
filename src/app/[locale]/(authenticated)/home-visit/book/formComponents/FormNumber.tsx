@@ -1,34 +1,30 @@
 import { Control, FieldValues, Path } from 'react-hook-form'
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
 
-import { Checkbox } from '@/components/ui/checkbox'
+import { Input } from '@/components/ui/input'
 import React from 'react'
 
 type Props<T extends FieldValues> = {
 	control: Control<T>
 	fieldName: Path<T>
-	fieldLabel: string
+	fieldPlaceholder: string
 }
 
-export default function FormCheckbox<T extends FieldValues>({
+export default function FormNumber<T extends FieldValues>({
 	control,
 	fieldName,
-	fieldLabel,
+	fieldPlaceholder,
 }: Props<T>) {
 	return (
 		<FormField
 			control={control}
 			name={fieldName}
 			render={({ field }) => (
-				<FormItem className="flex items-center">
+				<FormItem id={fieldName} className="flex-[1]">
+					<FormLabel />
 					<FormControl>
-						<Checkbox
-							className="mt-2 mr-3"
-							checked={field.value}
-							onCheckedChange={field.onChange}
-						/>
+						<Input placeholder={fieldPlaceholder} type="number" min={1} {...field} />
 					</FormControl>
-					<FormLabel>{fieldLabel}</FormLabel>
 					<FormMessage />
 				</FormItem>
 			)}

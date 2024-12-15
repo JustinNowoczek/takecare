@@ -11,7 +11,7 @@ type Props<T extends FieldValues> = {
 	fieldPlaceholder: string
 }
 
-export default function FormTexts<T extends FieldValues>({
+export default function FormText<T extends FieldValues>({
 	control,
 	fieldName,
 	fieldLabel,
@@ -22,7 +22,7 @@ export default function FormTexts<T extends FieldValues>({
 			control={control}
 			name={fieldName}
 			render={({ field }) => (
-				<FormItem>
+				<FormItem id={fieldName} className="flex-[2] w-full">
 					<FormLabel>{fieldLabel}</FormLabel>
 					<FormControl>
 						<Input placeholder={fieldPlaceholder} {...field} />

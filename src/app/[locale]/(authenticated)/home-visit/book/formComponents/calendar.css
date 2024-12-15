@@ -1,0 +1,26 @@
+#dobCalendar > div > div {
+	width: 100%;
+
+	& span {
+		display: none;
+	}
+
+	& > div > div {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		flex-direction: row-reverse;
+		opacity: 0.8;
+
+		> div {
+			> div {
+				display: none;
+			}
+		}
+
+		> div:nth-of-type(1) {
+			display: none;
+		}
+	}
+}
+
