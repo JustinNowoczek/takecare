@@ -1,6 +1,7 @@
 'use client'
 
 import { Bug, CalendarPlus2, Globe } from 'lucide-react'
+import { Link, routing, usePathname, useRouter } from '@/i18n/routing'
 import {
 	Select,
 	SelectContent,
@@ -8,7 +9,6 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from '@/components/ui/select'
-import { routing, usePathname, useRouter } from '@/i18n/routing'
 import { useLocale, useTranslations } from 'next-intl'
 
 import { Button } from '@/components/ui/button'
@@ -39,14 +39,18 @@ export default function Header() {
 		<header className="flex justify-between bg-tcbackground px-16 py-6 border-tcborder border-b-2 border-solid header">
 			<Logo />
 			<nav className="flex items-center gap-6">
-				<Button variant={'outline'} className="px-6 py-3 border-tcerror h-fit text-tcerror">
-					<Bug />
-					<span className="text-base">{t('bug-report')}</span>
-				</Button>
-				<Button className="bg-tcsecondary px-6 py-3 h-fit">
-					<CalendarPlus2 />
-					<span className="text-base">{t('book-visit')}</span>
-				</Button>
+				<Link href="/bug-report">
+					<Button variant={'outline'} className="px-6 py-3 border-tcerror h-fit text-tcerror">
+						<Bug />
+						<span className="text-base">{t('bug-report')}</span>
+					</Button>
+				</Link>
+				<Link href="/home-visit/book">
+					<Button className="bg-tcsecondary px-6 py-3 h-fit">
+						<CalendarPlus2 />
+						<span className="text-base">{t('book-visit')}</span>
+					</Button>
+				</Link>
 				<Select defaultValue={currentLang} onValueChange={onSelectChange}>
 					<SelectTrigger className="flex gap-2 border-none text-tcsecondary">
 						<Globe />
