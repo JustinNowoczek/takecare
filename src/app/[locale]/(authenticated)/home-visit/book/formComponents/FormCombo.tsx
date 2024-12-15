@@ -43,7 +43,7 @@ export default function FormCombo<T extends FieldValues>({
 			name={fieldName}
 			render={({ field }) => (
 				<FormItem id={fieldName} className="flex flex-col">
-					<FormLabel>{fieldLabel}</FormLabel>
+					<FormLabel className="text-tcprimaryDark">{fieldLabel}</FormLabel>
 					<Popover>
 						<PopoverTrigger asChild>
 							<FormControl>
@@ -52,7 +52,7 @@ export default function FormCombo<T extends FieldValues>({
 										variant="outline"
 										role="combobox"
 										className={
-											'w-full justify-between ' +
+											'w-full justify-between border-0 border-b-2 rounded-none ' +
 											(!field.value || (Array.isArray(field.value) && field.value.length === 0)
 												? 'text-muted-foreground'
 												: '')

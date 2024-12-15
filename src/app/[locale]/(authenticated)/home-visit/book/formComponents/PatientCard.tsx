@@ -88,7 +88,9 @@ export default function PatientCard({ control, formT, options, i, setValue, firs
 	return (
 		<Card key={i}>
 			<CardHeader className="text-2xl">
-				<h1>{formT.patientTitle + ' ' + (firstName === '' ? RN[i] : firstName)}</h1>
+				<h1 className="text-tcprimaryDark">
+					{formT.patientTitle + ' ' + (firstName === '' ? RN[i] : firstName)}
+				</h1>
 			</CardHeader>
 			<CardContent className="flex flex-col gap-6">
 				<FormTabs
@@ -103,7 +105,7 @@ export default function PatientCard({ control, formT, options, i, setValue, firs
 				/>
 
 				<div>
-					<FormLabel>{'Dane osobowe'}</FormLabel>
+					<FormLabel className="text-tcprimaryDark">{'Dane osobowe'}</FormLabel>
 					<div className="flex gap-4">
 						<FormText
 							{...{

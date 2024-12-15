@@ -28,7 +28,7 @@ export default function FormCheckbox<T extends FieldValues>({
 							onCheckedChange={field.onChange}
 						/>
 					</FormControl>
-					<FormLabel>{fieldLabel}</FormLabel>
+					<FormLabel className="text-tcprimaryDark">{fieldLabel}</FormLabel>
 					<FormMessage />
 				</FormItem>
 			)}

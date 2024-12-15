@@ -21,7 +21,7 @@ export default function FormNumber<T extends FieldValues>({
 			name={fieldName}
 			render={({ field }) => (
 				<FormItem id={fieldName} className="flex-[1]">
-					<FormLabel />
+					<FormLabel className="text-tcprimaryDark" />
 					<FormControl>
 						<Input placeholder={fieldPlaceholder} type="number" min={1} {...field} />
 					</FormControl>

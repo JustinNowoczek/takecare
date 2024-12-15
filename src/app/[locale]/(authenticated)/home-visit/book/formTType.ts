@@ -53,6 +53,9 @@ type GenericMessages = {
 	inputMismatch: string
 	timeMismatch: string
 	requiredField: string
+	addPatient: string
+	removePatient: string
+	submit: string
 }
 
 export type FormTType = {

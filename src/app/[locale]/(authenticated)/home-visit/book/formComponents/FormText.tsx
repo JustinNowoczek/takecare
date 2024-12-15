@@ -23,9 +23,13 @@ export default function FormText<T extends FieldValues>({
 			name={fieldName}
 			render={({ field }) => (
 				<FormItem id={fieldName} className="flex-[2] w-full">
-					<FormLabel>{fieldLabel}</FormLabel>
+					<FormLabel className="text-tcprimaryDark">{fieldLabel}</FormLabel>
 					<FormControl>
-						<Input placeholder={fieldPlaceholder} {...field} />
+						<Input
+							className="border-0 border-b-2 rounded-none"
+							placeholder={fieldPlaceholder}
+							{...field}
+						/>
 					</FormControl>
 					<FormMessage />
 				</FormItem>

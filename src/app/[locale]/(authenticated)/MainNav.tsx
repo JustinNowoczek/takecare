@@ -75,7 +75,7 @@ function MainNav() {
 				</nav>
 			</div>
 
-			<footer>
+			<footer className="pb-40">
 				<Logo height={31} />
 				<span className="text-sm text-tctextGray">© www.takes-care.com 2024</span>
 			</footer>

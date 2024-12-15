@@ -76,7 +76,10 @@
 			"searchMismatch": "No option found for this search",
 			"timeMismatch": "This time is unavailable",
 			"requiredField": "Field is required",
-			"inputMismatch": "Invalid value"
+			"inputMismatch": "Invalid value",
+			"addPatient": "Add patient",
+			"removePatient": "Remove last patient",
+			"submit": "Submit"
 		}
 	}
 }

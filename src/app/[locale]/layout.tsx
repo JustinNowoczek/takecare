@@ -33,7 +33,7 @@ export default async function LocaleLayout({
 			<body className={`${interVar.variable} h-screen flex flex-col antialiased`}>
 				<NextIntlClientProvider messages={messages}>
 					<Header />
-					<div className="flex justify-between gap-5 my-10 px-[100px] h-full">{children}</div>
+					<div className="flex justify-between gap-5 my-10 px-[100px] h-min">{children}</div>
 				</NextIntlClientProvider>
 			</body>
 		</html>

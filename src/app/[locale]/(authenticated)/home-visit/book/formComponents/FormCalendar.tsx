@@ -33,11 +33,16 @@ export default function FormCalendar<T extends FieldValues>({
 			name={fieldName}
 			render={({ field }) => (
 				<FormItem id={fieldName} className="flex flex-col">
-					<FormLabel>{fieldLabel}</FormLabel>
+					<FormLabel className="text-tcprimaryDark">{fieldLabel}</FormLabel>
 					<Popover>
 						<PopoverTrigger asChild>
 							<FormControl>
-								<Button variant={'outline'} className={!field.value ? 'text-muted-foreground' : ''}>
+								<Button
+									variant={'outline'}
+									className={
+										!field.value ? 'text-muted-foreground' : '' + 'border-0 border-b-2 rounded-none'
+									}
+								>
 									{field.value ? format(field.value, 'PPP') : <span>{fieldPlaceholder}</span>}
 									<ChevronDown className="opacity-50 ml-auto w-4 h-4" />
 								</Button>

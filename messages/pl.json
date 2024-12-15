@@ -76,7 +76,10 @@
 			"searchMismatch": "Brak opcji pod tym wyszukaniem",
 			"timeMismatch": "Ten czas nie jest dostepny",
 			"requiredField": "Pole jest wymagane",
-			"inputMismatch": "Niepoprawna wartosc"
+			"inputMismatch": "Niepoprawna wartosc",
+			"addPatient": "Dodaj pacjenta",
+			"removePatient": "Skasuj ostatniego pacjenta",
+			"submit": "Wyslij"
 		}
 	}
 }

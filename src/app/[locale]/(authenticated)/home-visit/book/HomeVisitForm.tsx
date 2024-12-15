@@ -352,7 +352,7 @@ export default function HomeVisitForm({
 			<Form {...form}>
 				<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col flex-1 gap-6">
 					<Card>
-						<CardHeader className="text-2xl">Wizyta</CardHeader>
+						<CardHeader className="text-2xl text-tcprimaryDark">{formT.title}</CardHeader>
 						<CardContent className="flex flex-col gap-6">
 							<FormText {...{ control }} {...formT.fields.requestId} fieldName="requestId" />
 
@@ -390,7 +390,7 @@ export default function HomeVisitForm({
 
 							{timeRanges && (
 								<div>
-									<FormLabel>Godzina</FormLabel>
+									<FormLabel className="text-tcprimaryDark">Godzina</FormLabel>
 									<div className="flex gap-2">
 										<FormHourSelect
 											{...{
@@ -424,7 +424,9 @@ export default function HomeVisitForm({
 								name="additionalInfo"
 								render={({ field }) => (
 									<FormItem id={'additionalInfo'}>
-										<FormLabel>{formT.fields.additionalInfo.fieldLabel}</FormLabel>
+										<FormLabel className="text-tcprimaryDark">
+											{formT.fields.additionalInfo.fieldLabel}
+										</FormLabel>
 										<FormControl>
 											<Textarea
 												className="min-h-40"
@@ -501,9 +503,9 @@ export default function HomeVisitForm({
 							type="button"
 							onClick={addPatient}
 							disabled={allPatients.length > 5}
-							className="w-full"
+							className="bg-tcsecondary w-full"
 						>
-							Add another patient
+							{formT.genericMessages.addPatient} {'  +'}
 						</Button>
 
 						<Button
@@ -511,21 +513,24 @@ export default function HomeVisitForm({
 							onClick={removePatient}
 							disabled={allPatients.length < 2}
 							className="w-full"
+							variant="destructive"
 						>
-							Remove last patient
+							{formT.genericMessages.removePatient} {'  -'}
 						</Button>
 					</div>
 
-					<Button type="submit" className="mb-40 w-full">
-						Submit
+					<Button type="submit" className="mb-40 w-full" variant="outline">
+						{formT.genericMessages.submit} {'  >'}
 					</Button>
 				</form>
 			</Form>
-			<Card className="w-[200px] h-min formNav">
+			<Card className="mt-20 w-[200px] h-min formNav">
 				<CardContent>
 					<Accordion type="multiple" defaultValue={['main']}>
 						<AccordionItem value="main">
-							<AccordionTrigger disabled>{formT.title}</AccordionTrigger>
+							<AccordionTrigger disabled className="text-tcprimaryDark">
+								{formT.title}
+							</AccordionTrigger>
 							<AccordionContent className="flex flex-col gap-2 w-max">
 								<Link href={'#requestId'}>{formT.fields.requestId.fieldLabel}</Link>
 								<Link href={'#visitType'}>{formT.fields.visitType.fieldLabel}</Link>
@@ -541,7 +546,7 @@ export default function HomeVisitForm({
 						</AccordionItem>
 						{allPatients.map(({ firstName }, i) => (
 							<AccordionItem key={i} value={'patient' + i}>
-								<AccordionTrigger>
+								<AccordionTrigger className="text-tcprimaryDark">
 									{formT.patientTitle + ' ' + (firstName === '' ? RN[i] : firstName)}
 								</AccordionTrigger>
 								<AccordionContent className="flex flex-col gap-2 w-max">
