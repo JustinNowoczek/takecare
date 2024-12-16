@@ -51,7 +51,7 @@ function MainNav() {
 				key={route}
 				className={
 					'flex gap-2  hover:text-tcprimary ' +
-					(isSelected ? 'text-tcsecondaryDark' : 'text-tctextDark')
+					(isSelected ? 'text-tcsecondaryDark font-bold ' : 'text-tctextDark')
 				}
 				href={route}
 			>

@@ -43,7 +43,7 @@ export default function FormCombo<T extends FieldValues>({
 			name={fieldName}
 			render={({ field }) => (
 				<FormItem id={fieldName} className="flex flex-col">
-					<FormLabel className="text-tcprimaryDark">{fieldLabel}</FormLabel>
+					<FormLabel className="font-bold text-tcprimaryDark">{fieldLabel}</FormLabel>
 					<Popover>
 						<PopoverTrigger asChild>
 							<FormControl>

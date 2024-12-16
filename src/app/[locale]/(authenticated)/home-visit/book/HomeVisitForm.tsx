@@ -7,6 +7,7 @@ import {
 	AccordionTrigger,
 } from '@/components/ui/accordion'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import { ChevronRight, MinusCircle, PlusCircle } from 'lucide-react'
 import {
 	Form,
 	FormControl,
@@ -393,7 +394,7 @@ export default function HomeVisitForm({
 
 							{timeRanges && (
 								<div>
-									<FormLabel className="text-tcprimaryDark">Godzina</FormLabel>
+									<FormLabel className="font-bold text-tcprimaryDark">Godzina</FormLabel>
 									<div className="flex gap-2">
 										<FormHourSelect
 											{...{
@@ -427,7 +428,7 @@ export default function HomeVisitForm({
 								name="additionalInfo"
 								render={({ field }) => (
 									<FormItem id={'additionalInfo'}>
-										<FormLabel className="text-tcprimaryDark">
+										<FormLabel className="font-bold text-tcprimaryDark">
 											{formT.fields.additionalInfo.fieldLabel}
 										</FormLabel>
 										<FormControl>
@@ -508,7 +509,7 @@ export default function HomeVisitForm({
 							disabled={allPatients.length > 5}
 							className="bg-tcsecondary w-full"
 						>
-							{formT.genericMessages.addPatient} {'  +'}
+							{formT.genericMessages.addPatient} <PlusCircle />
 						</Button>
 
 						<Button
@@ -518,12 +519,12 @@ export default function HomeVisitForm({
 							className="w-full"
 							variant="destructive"
 						>
-							{formT.genericMessages.removePatient} {'  -'}
+							{formT.genericMessages.removePatient} <MinusCircle />
 						</Button>
 					</div>
 
 					<Button type="submit" className="mb-40 w-full" variant="outline">
-						{formT.genericMessages.submit} {'  >'}
+						{formT.genericMessages.submit} <ChevronRight />
 					</Button>
 				</form>
 			</Form>

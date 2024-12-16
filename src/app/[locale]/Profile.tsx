@@ -11,7 +11,7 @@ export default function Profile() {
 				height={80}
 				alt="user profile"
 			/>
-			<h2 className="text-lg text-tcprimary">Imię Nazwisko </h2>
+			<h2 className="font-bold text-lg text-tcprimary">Imię Nazwisko </h2>
 			<span className="text-tctextGray">
 				Operator
 				<br />

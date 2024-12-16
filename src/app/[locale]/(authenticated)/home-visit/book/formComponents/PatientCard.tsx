@@ -76,7 +76,7 @@ export default function PatientCard({ control, formT, options, i, setValue, firs
 				/>
 
 				<div>
-					<FormLabel className="text-tcprimaryDark">{'Dane osobowe'}</FormLabel>
+					<FormLabel className="font-bold text-tcprimaryDark">{'Dane osobowe'}</FormLabel>
 					<div className="flex gap-4">
 						<FormText
 							{...{
