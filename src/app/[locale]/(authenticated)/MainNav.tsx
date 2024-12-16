@@ -41,7 +41,7 @@ function MainNav() {
 
 	const nav = [navItems.slice(0, -3), navItems.slice(-3, -1), navItems.slice(-1)]
 
-	function navItem([route, Icon]: [route: string, Icon: LucideIcon]) {
+	function NavItem([route, Icon]: [route: string, Icon: LucideIcon]) {
 		const isSelected = route === '/' ? route === currentPath : currentPath.startsWith(route)
 
 		const t = useTranslations(route)
@@ -69,7 +69,7 @@ function MainNav() {
 					{nav.map((nl, i) => (
 						<React.Fragment key={i}>
 							<Separator />
-							<div className="flex flex-col gap-4 main">{nl.map(navItem)}</div>
+							<div className="flex flex-col gap-4 main">{nl.map(NavItem)}</div>
 						</React.Fragment>
 					))}
 				</nav>

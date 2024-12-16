@@ -29,7 +29,7 @@ export default function Header() {
 
 	function onSelectChange(nextLocale: string) {
 		router.replace(
-			// @ts-expect-error
+			// @ts-expect-error documentation specified comment
 			{ pathname, params },
 			{ locale: nextLocale }
 		)

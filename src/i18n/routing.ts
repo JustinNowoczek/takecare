@@ -7,4 +7,7 @@ export const routing = defineRouting({
 	defaultLocale: 'pl',
 })
 
+export type LanguageT = 'en' | 'pl'
+
 export const { Link, redirect, usePathname, useRouter, getPathname } = createNavigation(routing)
+

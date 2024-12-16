@@ -1,11 +1,12 @@
 import './globals.css'
 
+import { LanguageT, routing } from '@/i18n/routing'
+
 import Header from './Header'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import localFont from 'next/font/local'
 import { notFound } from 'next/navigation'
-import { routing } from '@/i18n/routing'
 
 const interVar = localFont({
 	src: './fonts/Inter-VariableFont_opsz,wght.ttf',
@@ -22,7 +23,7 @@ export default async function LocaleLayout({
 }) {
 	const locale = (await params).locale
 
-	if (!routing.locales.includes(locale as any)) {
+	if (!routing.locales.includes(locale as LanguageT)) {
 		notFound()
 	}
 

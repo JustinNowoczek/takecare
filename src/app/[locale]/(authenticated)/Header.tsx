@@ -14,7 +14,7 @@ import React from 'react'
 import { usePathname } from '@/i18n/routing'
 
 export default function Header() {
-	const [_, page, subPage] = usePathname().split('/')
+	const [, page, subPage] = usePathname().split('/')
 
 	const locale = useLocale()
 	const t = useTranslations(`/${page}`)

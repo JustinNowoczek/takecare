@@ -15,9 +15,8 @@ import {
 	FormLabel,
 	FormMessage,
 } from '@/components/ui/form'
-import { Link, redirect } from '@/i18n/routing'
 import { Path, useForm } from 'react-hook-form'
-import React, { useEffect, useMemo } from 'react'
+import React, { useMemo } from 'react'
 
 import { Button } from '@/components/ui/button'
 import FormCalendar from './formComponents/FormCalendar'
@@ -26,6 +25,7 @@ import FormCombo from './formComponents/FormCombo'
 import FormHourSelect from './formComponents/FormHourSelect'
 import { FormTType } from './formTType'
 import FormText from './formComponents/FormText'
+import { Link } from '@/i18n/routing'
 import PatientCard from './formComponents/PatientCard'
 import { Textarea } from '@/components/ui/textarea'
 import { useMessages } from 'next-intl'
@@ -123,9 +123,13 @@ export default function HomeVisitForm({
 			(data) => {
 				const { birthDate, ageGroup } = data
 
-				let today = new Date()
+				const today = new Date()
 
-				let eighteenYearsAgo = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate())
+				const eighteenYearsAgo = new Date(
+					today.getFullYear() - 18,
+					today.getMonth(),
+					today.getDate()
+				)
 
 				if (ageGroup === 'child') {
 					return birthDate > eighteenYearsAgo
@@ -174,7 +178,6 @@ export default function HomeVisitForm({
 				if (data.provideTimeRange) {
 					const currentDate = new Date()
 					const bookedForToday = areSameDay(data.visitDate, currentDate)
-					data.visitDate.toISOString().slice(0, 10) === currentDate.toISOString().slice(0, 10)
 
 					if (bookedForToday) {
 						const minTime =
