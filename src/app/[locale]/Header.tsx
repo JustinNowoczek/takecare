@@ -36,7 +36,7 @@ export default function Header() {
 	}
 
 	return (
-		<header className="flex justify-between bg-tcbackground px-16 py-6 border-tcborder border-b-2 border-solid header">
+		<header className="flex justify-between bg-tccard px-16 py-6 border-tcborder border-b-2 border-solid header">
 			<Logo />
 			<nav className="flex items-center gap-6">
 				<Link href="/bug-report">
