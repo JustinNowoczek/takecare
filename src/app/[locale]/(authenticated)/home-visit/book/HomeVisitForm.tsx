@@ -352,7 +352,7 @@ export default function HomeVisitForm({
 	}
 
 	return (
-		<main className="flex gap-5">
+		<main className="relative flex gap-5">
 			<Form {...form}>
 				<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col flex-1 gap-6">
 					<Card>
@@ -528,7 +528,7 @@ export default function HomeVisitForm({
 					</Button>
 				</form>
 			</Form>
-			<Card className="mt-20 w-[200px] h-min formNav">
+			<Card className="relative -top-20 w-[200px] h-min formNav">
 				<CardContent>
 					<Accordion type="multiple" defaultValue={['main']}>
 						<AccordionItem value="main">
